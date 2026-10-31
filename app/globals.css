@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/*
+  Light Steel Color Theme Specification:
+  - Bright Snow:     #f8f9fa (Clean, icy hue reflecting untouched snow)
+  - Platinum:        #e9ecef (Softly muted silver-white shade)
+  - Alabaster Grey:  #dee2e6 (Pale, misty grey)
+  - Pale Slate 1:    #ced4da (Delicate, misty shade with blue-grey undertones)
+  - Pale Slate 2:    #adb5bd (Cool medium misty steel)
+  - Slate Grey:      #6c757d (Cool undertones, subdued strength)
+  - Iron Grey:       #495057 (Stoic slate grey tinted blue-green)
+  - Gunmetal:        #343a40 (Metallic essence of muted steel)
+  - Shadow Grey:     #212529 (Misty, shadow-laden dark blends)
+*/
+
+@theme {
+  --color-bright-snow: #f8f9fa;
+  --color-platinum: #e9ecef;
+  --color-alabaster: #dee2e6;
+  --color-pale-slate-1: #ced4da;
+  --color-pale-slate-2: #adb5bd;
+  --color-slate-grey: #6c757d;
+  --color-iron-grey: #495057;
+  --color-gunmetal: #343a40;
+  --color-shadow-grey: #212529;
+
+  /* Universal mapping of slate scale to Light Steel palette */
+  --color-slate-950: #f8f9fa; /* Bright Snow: page background */
+  --color-slate-900: #ffffff; /* Crisp white card surface */
+  --color-slate-800: #e9ecef; /* Platinum: secondary cards & chips */
+  --color-slate-700: #dee2e6; /* Alabaster Grey: standard borders */
+  --color-slate-600: #ced4da; /* Pale Slate: input borders & dividers */
+  --color-slate-500: #adb5bd; /* Pale Slate 2: soft icons & placeholders */
+  --color-slate-400: #6c757d; /* Slate Grey: muted text & labels */
+  --color-slate-300: #495057; /* Iron Grey: body text */
+  --color-slate-200: #343a40; /* Gunmetal: subheadings & dark accents */
+  --color-slate-100: #212529; /* Shadow Grey: prominent text */
+
+  /* Primary interactive colors */
+  --color-indigo-600: #343a40; /* Gunmetal: primary button */
+  --color-indigo-500: #212529; /* Shadow Grey: button hover */
+  --color-indigo-400: #495057; /* Iron Grey: accents */
+}
+
+:root {
+  --background: #f8f9fa;
+  --foreground: #212529;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Light Steel universal element overrides */
+input, select, textarea {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  border-color: #ced4da !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #adb5bd !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #343a40 !important;
+  outline: none !important;
+}
+
+/* Card titles and headings in Light Steel */
+h1, h2, h3, h4, th {
+  color: #212529 !important;
+}
+
+/* Tables in Light Steel */
+thead {
+  background-color: #f1f3f5 !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+thead th {
+  color: #495057 !important;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Ensure text on primary dark buttons stays clean white/bright snow */
+button.bg-indigo-600,
+button.bg-indigo-600 *,
+button.bg-emerald-600,
+button.bg-emerald-600 *,
+button.bg-rose-600,
+button.bg-rose-600 *,
+.btn-primary,
+.bg-gradient-to-r.from-emerald-600,
+.bg-gradient-to-r.from-emerald-600 * {
+  color: #f8f9fa !important;
+}
+
+/* Custom scrollbars in Light Steel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ced4da;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
